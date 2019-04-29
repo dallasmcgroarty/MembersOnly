@@ -9,6 +9,11 @@
   <div class="d-flex justify-content-center align-self-center form-body" style="background-color: white; width: 40%; border-radius: 5px; margin-top: 20px;">
     <form action="register_User.php" method="post" style="width:80%;">
         <div class="form-group" style="padding-top: 40px; width: 100%">
+        <?php
+            if (empty($_POST['firstName']) || empty($_POST['lastName']) || empty($_POST['email']) || empty($_POST['password'])) {
+                echo "<p class='text-center' style='color: red; font-weight: bold'> Please fill in all fields to register</p>";
+            }
+        ?>
             <input class="form-control" name="firstName" id="firstName" placeholder="First Name" autofocus>
         </div>
         <div class="form-group" style="">
