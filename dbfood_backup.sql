@@ -77,10 +77,10 @@ DROP TABLE IF EXISTS `users`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `users` (
   `UserID` int(11) NOT NULL AUTO_INCREMENT,
-  `PasswordHash` varchar(256) NOT NULL,
   `FirstName` char(50) NOT NULL,
   `LastName` char(50) NOT NULL,
   `Email` varchar(255) NOT NULL,
+  `PasswordHash` varchar(256) NOT NULL,
   PRIMARY KEY (`UserID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -91,7 +91,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'slknig94nklnfls94ksnmgfngk204ngf0','Tom','Floors','tomfloors@yahoo.com'),(2,'klfngnognfklhnd592mnfkldng02nmgln','Tina','Coors','tinacoors@gmail.com');
+INSERT INTO `users` VALUES (1,'Tom','Floors','tomfloors@yahoo.com','slknig94nklnfls94ksnmgfngk204ngf0'),(2,'Tina','Coors','tinacoors@gmail.com','klfngnognfklhnd592mnfkldng02nmgln');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -104,4 +104,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-04-28 20:00:25
+-- Dump completed on 2019-04-30 19:45:36

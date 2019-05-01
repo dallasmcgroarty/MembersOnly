@@ -1,15 +1,15 @@
 <?php
 //connect to food database
-$servername = "localhost";
-$username = "foodUser";
-$password = "food123";
-$db = "Food";
 
-$conn = new mysqli($servername, $username, $password, $db);
+function connect_db() {
+ 
+    $conn = new mysqli("localhost", "foodUser" , "food123", "Food");
 
-if($conn->connect_error) {
-    die("connection failed: " . $conn->connect_error);
+    if($conn->connect_error) {
+        die("connection failed: " . $conn->connect_error);
+    }   
+    else {
+        return $conn;
+    }
 }
-
-echo "\r\n<br />" . "Connected successfully" . "\r\n<br />";
 ?>

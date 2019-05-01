@@ -1,13 +1,16 @@
+/* To run script in terminal on windows use:
+     */
+
 CREATE DATABASE IF NOT EXISTS Food;
 
 USE Food;
 
 CREATE TABLE Users
     (UserID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-     PasswordHash VARCHAR(256) NOT NULL,
      FirstName CHAR(50) NOT NULL,
      LastName CHAR(50) NOT NULL,
-     Email VARCHAR(255) NOT NULL
+     Email VARCHAR(255) NOT NULL,
+     PasswordHash VARCHAR(256) NOT NULL
     );
 
 CREATE TABLE Foods
@@ -27,10 +30,10 @@ CREATE TABLE FavoriteFoods
     );
 
 /*Insert some test data*/
-INSERT INTO Users (PasswordHash, FirstName, LastName, Email)
-VALUES ('slknig94nklnfls94ksnmgfngk204ngf0', 'Tom', 'Floors', 'tomfloors@yahoo.com');
-INSERT INTO Users (PasswordHash, FirstName, LastName, Email)
-VALUES ('klfngnognfklhnd592mnfkldng02nmgln', 'Tina', 'Coors', 'tinacoors@gmail.com');
+INSERT INTO Users (FirstName, LastName, Email, PasswordHash)
+VALUES ('Tom', 'Floors', 'tomfloors@yahoo.com', 'slknig94nklnfls94ksnmgfngk204ngf0');
+INSERT INTO Users (FirstName, LastName, Email, PasswordHash)
+VALUES ('Tina', 'Coors', 'tinacoors@gmail.com', 'klfngnognfklhnd592mnfkldng02nmgln');
 SET @userID = LAST_INSERT_ID();
 
 INSERT INTO Foods (FoodName, FoodType, Calories)
