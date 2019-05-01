@@ -30,11 +30,12 @@
         require('connect_db.php');
 
         $conn = connect_db();
-        
+
         $stmt = $conn->prepare('SELECT * FROM Users WHERE Email = ?');
         $stmt->bind_param('s', $email);
         $stmt->execute();
         $result = $stmt->get_result();
+
         if(!$result)
         {
             echo "<p class='text-center' style='color: red; font-weight: bold'>Could not execute query</p>";
@@ -53,8 +54,52 @@
             }
             else
             {
-                echo "<p class='text-center' style='color: LawnGreen; font-weight: bold'>Registration Successful!</p>";
+                echo "<p class='text-center' style='color: LawnGreen; font-weight: bold'>Registration Successful!<br/>
+                You can now sign in!</p>";
+            }
+            $stmt->close();
+        }
+        $conn->close();
+    }
+
+    //sign in user check database and create a session
+    function sign_in($email, $pass)
+    {
+        session_start();
+
+        require('connect_db.php');
+
+        //$hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
+
+        $conn = connect_db();
+
+        $stmt = $conn->prepare('SELECT * FROM Users WHERE Email = ?');
+        $stmt->bind_param('s', $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if(!$result)
+        {
+            echo "<p class='text-center' style='color: red; font-weight: bold'>Invalid email!</p>";
+        }
+        while($row = $result->fetch_assoc())
+        {
+            $realpass = $row['PasswordHash'];
+
+            if(password_verify($pass, $realpass))
+            {
+                return true;
+            }
+            else {
+                return false;
             }
         }
+        $stmt->close();
+        $conn->close();
+    }
+
+    //check if user has signed in already
+    function check_user()
+    {
+
     }
 ?>
