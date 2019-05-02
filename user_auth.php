@@ -66,7 +66,7 @@
     function sign_in($email, $pass)
     {
         session_start();
-
+        
         require('connect_db.php');
 
         //$hashed_pass = password_hash($pass, PASSWORD_DEFAULT);

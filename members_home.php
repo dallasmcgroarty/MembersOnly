@@ -1,5 +1,11 @@
 <?php
-    require('header.html');
+    if(empty($_SESSION['user']))
+    {
+      header('Location: login.php');
+    }
+    else{
+      require('header.html');
+    }
 ?>
 <body class="container" style="background-color: lightblue;">
   <header>    
