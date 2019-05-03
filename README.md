@@ -5,4 +5,4 @@ Web application to log in to site and look at some data in a database
 
 PHP and MySQL used to authenticate users and access database
 
-HTML and bootstrap handle the front-end
+HTML, CSS, and Bootstrap handle the front-end
