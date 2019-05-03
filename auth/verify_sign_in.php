@@ -1,8 +1,10 @@
 <?php
     require('user_auth.php');
 
-    $email = $_POST['email'];
-    $pass = $_POST['password'];
+    session_start();
+    
+    $email = trim($_POST['email']);
+    $pass = trim($_POST['password']);
 
     if(!form_filled($_POST))
     {

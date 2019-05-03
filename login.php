@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require('header.html');
 ?>
 <body class="container" style="background-color: lightblue;">

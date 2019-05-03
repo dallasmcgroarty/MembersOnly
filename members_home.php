@@ -1,4 +1,10 @@
 <?php
+    require('auth/user_auth.php');
+
+    if(!check_user())
+    {
+      header('Location: non_member_home.php');
+    }
     require('header.html');
 ?>
 <body class="container" style="background-color: lightblue;">

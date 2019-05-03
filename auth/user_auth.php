@@ -24,10 +24,10 @@
         return true;
     }
 
-    //register user in database
+    //register user in database as long as all fields are valid
     function register($first, $last, $email, $pass)
     {
-        require('connect_db.php');
+        require('db/connect_db.php');
 
         $conn = connect_db();
 
@@ -62,14 +62,12 @@
         $conn->close();
     }
 
-    //sign in user check database and create a session
+    //sign in user check database and create a session user
     function sign_in($email, $pass)
     {
         session_start();
 
-        require('connect_db.php');
-
-        //$hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
+        require('db/connect_db.php');
 
         $conn = connect_db();
 
@@ -87,6 +85,7 @@
 
             if(password_verify($pass, $realpass))
             {
+                $_SESSION['user'] = $email;
                 return true;
             }
             else {
@@ -100,6 +99,14 @@
     //check if user has signed in already
     function check_user()
     {
-
+        session_start();
+        
+        if(!empty($_SESSION['user']))
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 ?>

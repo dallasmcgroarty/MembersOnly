@@ -10,7 +10,7 @@
     <form action="register_User.php" method="post" style="width:80%;">
         <div class="form-group" style="padding-top: 40px; width: 100%">
         <?php
-            require('validate_reg.php');
+            require('auth/validate_reg.php');
         ?>
             <input class="form-control" name="firstName" id="firstName" placeholder="First Name" autofocus>
         </div>
