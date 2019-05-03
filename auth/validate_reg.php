@@ -1,10 +1,10 @@
 <?php
     require('user_auth.php');
 
-    $first = $_POST['firstName'];
-    $last = $_POST['lastName'];
-    $email = $_POST['email'];
-    $pass = $_POST['password'];
+    $first = trim($_POST['firstName']);
+    $last = trim($_POST['lastName']);
+    $email = trim($_POST['email']);
+    $pass = trim($_POST['password']);
 
     if(!form_filled($_POST))
     {
