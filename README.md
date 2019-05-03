@@ -1,5 +1,5 @@
 # PHP-MySQL-APP
-web application using PHP and MySQL. HTML and bootstrap front-end
+web application using PHP and MySQL. HTML, CSS, Bootstrap front-end
 
 Web application to log in to site and look at some data in a database
 
