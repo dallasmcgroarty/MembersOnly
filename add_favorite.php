@@ -23,7 +23,7 @@
     <a class="nav-link" href="favorites_list.php">Favorites</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Sign out</a>
+    <a class="nav-link" href="sign_out.php">Sign out</a>
   </li>
   </ul>
   <div class="d-flex justify-content-center container">

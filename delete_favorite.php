@@ -23,7 +23,7 @@
     <a class="nav-link" href="favorites_list.php">Favorites</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">Sign out</a>
+    <a class="nav-link" href="sign_out.php">Sign out</a>
   </li>
   </ul>
   <div class="d-flex justify-content-center container">
@@ -45,7 +45,7 @@
             <input class="form-control" name="food" id="food" placeholder="Enter name of the food" autofocus>
         </div>
         <div class="d-flex flex-row justify-content-center" style="margin-top: 10px; margin-bottom: 10px;">
-        <button type="submit" class="btn btn-primary" style="margin-bottom: 10px; width: 60%">Add</button>
+        <button type="submit" class="btn btn-primary" style="margin-bottom: 10px; width: 60%">Delete</button>
         </div>
     </form>
   </div>
