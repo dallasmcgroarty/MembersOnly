@@ -32,11 +32,13 @@
         <div class="form-group" style="padding-top: 40px; width: 100%">
             <p class=text-center style='color: black; font-weight: bold'>Add a new favorite food</p>
             <?php
+              //check if user input
                 if(empty($_POST['food']))
                 {
                     //echo "<p class='text-center' style='color: red; font-weight: bold'>Enter a food to add</p>";
                 }
                 else {
+                  // trim the input and call function from queries.php
                     $favorite = trim($_POST['food']);
                     require('db/queries.php');
                     add_favorite($favorite);

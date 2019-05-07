@@ -30,10 +30,21 @@
         <div class="d-flex flex-row justify-content-center" style="padding-top: 20px; width: 100%">
           <div class='p-2' style='color: black; font-weight: bold'>Are You Sure You Want To Sign Out?</div>
         </div>
-        <div class="d-flex flex-row justify-content-center" style="margin-top: 20px;margin-bottom: 20px;">
-          <a role="button" class="btn btn-primary p-2" href=# style="width: 40%; margin-right: 10px;">Yes</a>
-          <a role="button" class="btn btn-primary p-2" href=# style="width: 40%; margin-left: 10px;">No</a>
-        </div>
+        <form action="sign_out.php" method="post">
+          <div class="d-flex flex-row justify-content-center" style="margin-top: 20px;margin-bottom: 20px;">
+            <button role="button" type="submit" class="btn btn-primary p-2" name="yes" href=sign_out.php style="width: 40%; margin-right: 10px;">Yes</a>
+            <button role="button" type="submit" class="btn btn-primary p-2" name="no" href=members_home.php style="width: 40%; margin-left: 10px;">No</a>
+          </div>
+        </form>
+        <?php 
+          //check if yes button was pressed, if so then unset session variable user,
+          //and destory the session. Redirect user to login page
+          if(isset($_POST['yes'])) {
+            unset($_SESSION['user']);
+            session_destroy();
+            header("Location: login.php");
+          }
+        ?>
       </div>
   </div>
 <?php
