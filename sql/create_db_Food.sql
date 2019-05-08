@@ -1,5 +1,5 @@
-/* To run script in terminal on windows use:
-     */
+/*sql script to create a food database with users, foods and favorites.
+  some test data is also inserted. */
 
 CREATE DATABASE IF NOT EXISTS Food;
 

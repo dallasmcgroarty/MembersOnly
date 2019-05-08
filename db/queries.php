@@ -1,4 +1,6 @@
 <?php
+//file for all database queries other than user authentication/register
+
  //function to query database for all stored foods
  function load_food()
  {
@@ -14,7 +16,7 @@
      else {
         while($rows = $result->fetch_assoc())
         {
-            echo "<div class='d-flex flex-row justify-content-around' style=''>";
+            echo "<div class='d-flex flex-row justify-content-around align-items-center' style=''>";
             echo "<div class='p-2' style='color: black;'>" . $rows['FoodName'] . "</div>";
             echo "<div class='p-2' style='color: black;'>" . $rows['FoodType'] . "</div>";
             echo "<div class='p-2' style='color: black;'>" . $rows['Calories'] . "</div>";
@@ -71,7 +73,8 @@
     require('connect_db.php');
 
     $conn = connect_db();
-
+    //trim and escape string
+    $favorite = trim($_POST['food']);
     $favorite = mysqli_real_escape_string($conn, $favorite);
 
     $food ="";
@@ -135,7 +138,8 @@
     require('connect_db.php');
 
     $conn = connect_db();
-
+    //trim and escape string
+    $favorite = trim($_POST['food']);
     $favorite = mysqli_real_escape_string($conn, $favorite);
 
     $food ="";
@@ -188,6 +192,49 @@
             }
         }
     }
+    $conn->close();
+ }
+
+ //function to add a new food to the database
+ function add_food($food, $type, $calories)
+ {
+    require('connect_db.php');
+
+    $conn = connect_db();
+    //trim input
+    $food = trim($_POST['food']);
+    $type = trim($_POST['foodType']);
+    $calories = trim($_POST['calories']);
+
+    //get food id associated with that food's name
+    $stmt = $conn->prepare('SELECT FoodID FROM Foods WHERE FoodName = ?');
+    $stmt->bind_param('s', $food);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    //check if its in the database
+    if($result->num_rows > 0)
+    {
+        echo "<p class='text-center' style='color: red; font-weight: bold'>That food is already in the database</p>";
+        $result->free();
+        $stmt->close();
+    }
+    //else insert food into database
+    else{
+        $stmt = $conn->prepare('INSERT INTO Foods (FoodName, FoodType, Calories) VALUES (?, ?, ?)');
+        $stmt->bind_param('ssd', $food, $type, $calories);
+        $stmt->execute();
+        if(!$stmt)
+        {
+            echo "<p class='text-center' style='color: red; font-weight: bold'>Error adding food! Please try again</p>";
+        }
+        else
+        {
+            echo "<p class='text-center' style='color: LawnGreen; font-weight: bold'>Successfully added a new food!</p>";
+        }
+        $result->free();
+        $stmt->close();
+    }
+
     $conn->close();
  }
 ?>

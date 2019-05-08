@@ -1,4 +1,5 @@
 <?php
+//page to show a users favorite food
     require('auth/user_auth.php');
 
     if(!check_user())

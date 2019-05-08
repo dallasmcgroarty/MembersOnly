@@ -1,4 +1,5 @@
 <?php
+//page to show current stored food
     require('auth/user_auth.php');
 
     if(!check_user())
@@ -40,7 +41,7 @@
             load_food();
         ?>
         <div class="d-flex flex-row justify-content-center" style="margin-top: 20px; margin-bottom: 10px;">
-          <button type="button" class="btn btn-primary p-2" href=# style="width: 50%">Add food</button>
+        <a role="button" class="btn btn-primary p-2" href=add_food.php style="width: 50%">Add food</a>
         </div>
       </div>
   </div>

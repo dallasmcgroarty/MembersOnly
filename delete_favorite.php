@@ -37,7 +37,8 @@
                     //echo "<p class='text-center' style='color: red; font-weight: bold'>Enter a food to add</p>";
                 }
                 else {
-                    $favorite = trim($_POST['food']);
+                    //call delete favorite function
+                    $favorite = $_POST['food'];
                     require('db/queries.php');
                     delete_favorite($favorite);
                 }

@@ -31,6 +31,10 @@
 
         $conn = connect_db();
 
+        $pass = mysqli_real_escape_string($conn, $pass);
+        //hash password now after escaping string
+        $pass = password_hash($pass, PASSWORD_DEFAULT);
+
         $stmt = $conn->prepare('SELECT * FROM Users WHERE Email = ?');
         $stmt->bind_param('s', $email);
         $stmt->execute();

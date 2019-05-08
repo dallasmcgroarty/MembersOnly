@@ -19,7 +19,7 @@
         <a class="float-left" href=register.php style="margin-top: 10px; margin-bottom: 10px; text-decoration: none">Register</a>
     </form>
   </div>
-  <a class="d-flex align-self-end float-right" href=non_member_home.php role="button" style="; margin-top: 10px; margin-bottom: 10px; width: 70%; text-decoration: none; font-size: 15px;">Continue without logging in</a>
+  <a class="d-flex align-self-end float-right" href=non_member_home.php role="button" style="; margin-top: 10px; margin-bottom: 10px; width: 70%; text-decoration: none; font-size: 15px;">Continue without signing in</a>
 </div>
 <?php
     require('footer.html');

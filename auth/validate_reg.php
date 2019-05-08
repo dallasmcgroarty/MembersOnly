@@ -1,4 +1,5 @@
 <?php
+    //validate user input, check if form filled, validate email and call register function
     require('user_auth.php');
 
     $first = trim($_POST['firstName']);
@@ -15,8 +16,7 @@
         echo "<p class='text-center' style='color: red; font-weight: bold'>Please enter a valid email address</p>";
     }
     else {
-        $hashed_pass = password_hash($pass, PASSWORD_DEFAULT);
-        register($first, $last, $email, $hashed_pass);
+        register($first, $last, $email, $pass);
     }
 
 ?>

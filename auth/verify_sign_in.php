@@ -1,4 +1,5 @@
 <?php
+//file to verify user sign in
     require('user_auth.php');
 
     session_start();
