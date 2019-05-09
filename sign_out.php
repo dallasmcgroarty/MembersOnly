@@ -33,7 +33,7 @@
         <form action="sign_out.php" method="post">
           <div class="d-flex flex-row justify-content-center" style="margin-top: 20px;margin-bottom: 20px;">
             <button role="button" type="submit" class="btn btn-primary p-2" name="yes" href=sign_out.php style="width: 40%; margin-right: 10px;">Yes</a>
-            <button role="button" type="submit" class="btn btn-primary p-2" name="no" href=members_home.php style="width: 40%; margin-left: 10px;">No</a>
+            <button role="button" type="submit" class="btn btn-primary p-2" name="no" href=sign_out.php style="width: 40%; margin-left: 10px;">No</a>
           </div>
         </form>
         <?php 
@@ -43,6 +43,10 @@
             unset($_SESSION['user']);
             session_destroy();
             header("Location: login.php");
+          }
+          elseif(isset($_POST['no']))
+          {
+            header("Location: members_home.php");
           }
         ?>
       </div>

@@ -17,9 +17,9 @@
         while($rows = $result->fetch_assoc())
         {
             echo "<div class='d-flex flex-row justify-content-around align-items-center' style=''>";
-            echo "<div class='p-2' style='color: black;'>" . $rows['FoodName'] . "</div>";
-            echo "<div class='p-2' style='color: black;'>" . $rows['FoodType'] . "</div>";
-            echo "<div class='p-2' style='color: black;'>" . $rows['Calories'] . "</div>";
+            echo "<div class='p-2' style='color: black; width: 50px;'>" . $rows['FoodName'] . "</div>";
+            echo "<div class='p-2' style='color: black; width: 50px;'>" . $rows['FoodType'] . "</div>";
+            echo "<div class='p-2' style='color: black; width: 50px;'>" . $rows['Calories'] . "</div>";
             echo "</div>";
         }
      }
@@ -58,9 +58,9 @@
         while($rows = $result->fetch_assoc())
         {
             echo "<div class='d-flex flex-row justify-content-around' style=''>";
-            echo "<div class='p-2' style='color: black;'>" . $rows['FoodName'] . "</div>";
-            echo "<div class='p-2' style='color: black;'>" . $rows['FoodType'] . "</div>";
-            echo "<div class='p-2' style='color: black;'>" . $rows['Calories'] . "</div>";
+            echo "<div class='p-2' style='color: black; width: 50px;'>" . $rows['FoodName'] . "</div>";
+            echo "<div class='p-2' style='color: black; width: 50px;'>" . $rows['FoodType'] . "</div>";
+            echo "<div class='p-2' style='color: black; width: 50px;'>" . $rows['Calories'] . "</div>";
             echo "</div>";
         }
         $result->free();

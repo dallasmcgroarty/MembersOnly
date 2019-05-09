@@ -32,9 +32,9 @@
           <div class='p-2' style='color: black; font-weight: bold'>Favorite Food</div>
         </div>
         <div class="d-flex flex-row justify-content-around align-items-center" style="">
-          <div class='p-2' style='color: black; font-weight: bold'>Food</div>
-          <div class='p-2' style='color: black; font-weight: bold'>Type</div>
-          <div class='p-2' style='color: black; font-weight: bold'>Calories</div>
+          <div class='p-2' style='color: black; font-weight: bold; width: 50px;'>Food</div>
+          <div class='p-2' style='color: black; font-weight: bold; width: 50px;'>Type</div>
+          <div class='p-2' style='color: black; font-weight: bold; width: 50px;'>Calories</div>
         </div>
         <?php
             require('db/queries.php');
