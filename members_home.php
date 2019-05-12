@@ -32,7 +32,7 @@
         </div>
         <div class="d-flex flex-row justify-content-center" style="margin-left: 10px; margin-right: 10px;">
           <div class='p-2' style='color: black;'>As a member you have access to our food database.
-            Use the navigation bar above to view the current stored food list and to view your own favorite food.
+            Use the navigation bar above to view the current stored foods list and to view your own favorite foods.
             You may sign out at any time and all your data will be saved.</div>
         </div>
       </div>
