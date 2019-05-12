@@ -9,7 +9,7 @@
 ?>
 <body class="container" style="background-color: lightblue;">
   <header>    
-    <h1 class="text-center" style="font-family: 'Bangers', cursive; margin-top: 10px">Member's Home Page</h1>
+    <h1 class="text-center" style="font-family: 'Bangers', cursive; margin-top: 10px">Sign Out</h1>
   </header>
   <ul class="nav nav-tabs justify-content-center">
   <li class="nav-item">
