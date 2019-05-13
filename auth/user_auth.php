@@ -69,7 +69,7 @@
     //sign in user check database and create a session user
     function sign_in($email, $pass)
     {
-        session_start();
+        //session_start();
 
         require('db/connect_db.php');
 
